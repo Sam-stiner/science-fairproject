@@ -9,36 +9,30 @@ global vilosity
 global distance
 global time
 
-
 def earth():
-    a=Label(top, text="what is the mass of the satilite (kg)").grid(row=2)
-    q=Entry(top, bd=5)
-    q.grid(row=2, column=2, columnspan=3)
-    mass=q.get()
-
-    a1=Label(top, text="what is the vilosity of the satilite (m/s)").grid(row=3)
-    w=Entry(top, bd =5)
-    w.grid(row=3, column=2, columnspan=3)
-    vilosity=w.get()
+    label1=Label(top, text="what is the mass of the satilite (kg)").grid(row=2)
+    mass=Entry(top, bd=5)
+    mass.grid(row=2, column=2, columnspan=3)
     
+    label2=Label(top, text="what is the vilosity of the satilite (m/s)").grid(row=3)
+    vilosity=Entry(top, bd =5)
+    vilosity.grid(row=3, column=2, columnspan=3)
     
-
-
-    a2=Label(top, text="how far is the satilte from earth (km)").grid(row=4)
-    e=Entry(top, bd=5)
-    e.grid(row=4, column=2, columnspan=3)
-    distance=e.get()
+    label3=Label(top, text="how far is the satilte from earth (km)").grid(row=4)
+    distance=Entry(top, bd=5)
+    distance.grid(row=4, column=2, columnspan=3)
     
-
-
-    a3=Label(top, text="how long has the satilite been in orbit").grid(row=5)
-    y=Entry(top, bd=5)
-    y.grid(row=5, column=2, columnspan=3)
-    time=y.get()
-
+    label4=Label(top, text="how long has the satilite been in orbit").grid(row=5)
+    time=Entry(top, bd=5)
+    time.grid(row=5, column=2, columnspan=3)
+    
     o = Tkinter.Button (top, text="next", command  = earth1).grid(row=5, column=7)
 
 def earth1():
+    mass = massbox.get
+    vilosity = vilositybox.get
+    distance = distancebox.get
+    time = timebox.get
     if mass.isdigit():
         mass=int(mass)
     if vilosity.isdigit():
