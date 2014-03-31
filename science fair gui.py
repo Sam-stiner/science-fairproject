@@ -30,19 +30,10 @@ def earth():
     o = Tkinter.Button (top, text="next", command  = earth1).grid(row=5, column=7)
 
 def earth1():
-    mass = massbox.get
-    vilosity = vilositybox.get
-    distance = distancebox.get
-    time = timebox.get
-    
-    if mass.isdigit():
-        mass = int(mass)
-    if vilosity.isdigit():
-        vilosity = int(vilosity)
-    if distance.isdigit():
-        distance = int(distance)
-    if time.isdigit():
-        time = int(time)
+    mass = float (Entry.get(massbox))
+    vilosity = float (Entry.get(vilositybox))
+    distance = float (Entry.get(distancebox))
+    time = float (Entry.get (timebox))
    
     radius = distance+695500 
     force = (mass*vilosity**2)/radius
