@@ -5,11 +5,6 @@ import tkMessageBox
 
 top = Tkinter.Tk()
 
-global earthmass
-global vilosity
-global distance
-global time
-
 global massbox
 global vilositybox
 global distancebox
