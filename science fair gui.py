@@ -5,12 +5,12 @@ import tkMessageBox
 
 top = Tkinter.Tk()
 
-global massbox
-global vilositybox
-global distancebox
-global timebox
-
 def earth():
+    global massbox
+    global vilositybox
+    global distancebox
+    global timebox
+    
     label1 = Label (top, text="what is the mass of the satilite (kg)").grid(row=2)
     massbox = Entry (top, bd=5)
     massbox.grid (row=2, column=2, columnspan=3)
