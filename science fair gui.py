@@ -28,7 +28,7 @@ def earth():
     timebox.grid (row=5, column=2, columnspan=3)
     
     o = Tkinter.Button (top, text="next", command  = earth1).grid(row=5, column=7)
-
+                                            
 def earth1():
     mass = float (Entry.get(massbox))
     vilosity = float (Entry.get(vilositybox))
@@ -37,11 +37,30 @@ def earth1():
    
     radius = distance+695500 
     force = (mass*vilosity**2)/radius
-    a1 = Label(top, text =  'the net cintripital force is').grid(row = 7)
-    print f
+    label = Label(top, text =  'the net cintripital force is').grid(row = 7)
+    label2 = Label(top, textvariable = force).grid(row = 7, column = 5, columnspan = 3)
+    print force
+
+    Gravity = 6.673*10**(0-11)*r**2/mass**2
+    l=(4*3.14**2)/Gravity*(5.97219*10**24)
+    k=l/radius**3
+    years=k**.5
+    days=years/365
+    label3 = Label (top, text = 'the orbital period is,').grid (row = 8)
+    label4 = Label (top, textvariable = days).grid (row = 8, column = 5, columnspan = 3)
+    F = (days*k)*time
+    orbit-circum = 2*3.14*radius
+    distance-traveled = orbit-circum*F
+    lable5 = Label (top, text = 'the satilite has traveled,'.grid (row = 9)
+    
+                        
+    
+
+
 
 a = Tkinter.Button (top, text = "obgect in orbit around earth", command = earth).grid (row = 1, column = 1)
 
 top.mainloop()
+
 
 ===================
