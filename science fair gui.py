@@ -6,10 +6,13 @@ import tkMessageBox
 top = Tkinter.Tk()
 
 def earth():
-    global massboxEarth
-    global vilosityboxEarth
-    global distanceboxEarth
-    global timeboxEarth
+    try:
+        global massboxEarth
+        global vilosityboxEarth
+        global distanceboxEarth
+        global timeboxEarth
+    except:
+        print 'oh my you have to use numbers!"
     
     label1 = Label (top, text="what is the mass of the satilite (kg)").grid(row=2)
     massboxEarth = Entry (top, bd=5)
@@ -37,34 +40,29 @@ def earth1():
    
     radius = distance+6378.1
     force = (mass*vilosity**2)/radius
-    force1 = string(force)
-    
-    label = Label(top, text =  'the net cintripital force is').grid(row = 7)
-    label2 = Label(top, textvariable = force).grid(row = 7, column = 5, columnspan = 3)
-
-    Gravity = 6.673*10**(0-11)*r**2/mass**2
+ 
+    Gravity = 6.673*10**(0-11)*radius**2/mass**2
     l=(4*3.14**2)/Gravity*(1.9891*10**30)
     k=l/radius**3
     years=k**.5
     days=years/365
-    period = string(days)
-    
-    label3 = Label (top, text = 'the orbital period is,').grid (row = 8)
-    label4 = Label (top, textvariable = period).grid (row = 8, column = 5, columnspan = 3)
-    
+ 
     F = (days*k)*time
     orbitcircum = 2*3.14*radius
-    distancetraveled = orbit-circum*F
-    dt = string (distancetraveled)
+    distancetraveled = orbitcircum*F
+ 
+    force1 = "The net centrpital force is %.6f (newtons),\nthe orbital period is %.2f (days),\nthe satellite has travelled %.2f (km)" % (force, days, distancetraveled)
     
-    lable5 = Label (top, text = 'the satilite has traveled,').grid (row = 9)
-    lable6 = Label (top, textvariable = dt).grid (row = 9, column = 5, columnspan = 3)
+    label = Label(top, text = force1).grid(row = 7)
 
 def sun():
-    global massboxSun
-    global vilosityboxSun
-    global distanceboxSun
-    global timeboxSun
+    try:
+        global massboxSun
+        global vilosityboxSun
+        global distanceboxSun
+        global timeboxSun
+    except: 
+        print 'oh my you have to use numbers!'
     
     label1 = Label (top, text="what is the mass of the satilite (kg)").grid(row=2)
     massboxSun = Entry (top, bd=5)
@@ -92,28 +90,20 @@ def sun1():
    
     radius = distance+695500 
     force = (mass*vilosity**2)/radius
-    force1 = string (force)
-    
-    label = Label(top, text =  'the net cintripital force is').grid(row = 7)
-    label2 = Label(top, textvariable = force).grid(row = 7, column = 5, columnspan = 3)
 
-    Gravity = 6.673*10**(0-11)*r**2/mass**2
+    Gravity = 6.673*10**(0-11)*radius**2/mass**2
     l=(4*3.14**2)/Gravity*(5.97219*10**24)
     k=l/radius**3
     years=k**.5
     days=years/365
-    period = string (days)
-    
-    label3 = Label (top, text = 'the orbital period is,').grid (row = 8)
-    label4 = Label (top, textvariable = period).grid (row = 8, column = 5, columnspan = 3)
     
     F = (days*k)*time
     orbitcircum = 2*3.14*radius
-    distancetraveled = orbit-circum*F
-    dt = string(distancetraveled)
+    distancetraveled = orbitcircum*F
     
-    lable5 = Label (top, text = 'the satilite has traveled,').grid (row = 9)
-    label6 = Label (top, textvariable = dt).grid (row =9, column = 5, columnspan = 3)
+    force1 = "The net centrpital force is %.6f,\nthe orbital period is %.2f,\nand the satellite has travelled %.2f" % (force, days, distancetraveled)
+    label = Label(top, text = force1) 
+    
     
 a = Tkinter.Button (top, text = "satilite in orbit around earth", command = earth).grid (row = 1, column = 0)
 b = Tkinter.Button (top, text = "satilite in orbit around the Sun", command = sun).grid (row = 1, column = 2)
